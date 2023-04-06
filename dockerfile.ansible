@@ -1,0 +1,6 @@
+FROM ubuntu:20.04
+RUN apt update -y && \
+    apt install ansible -y && \
+    apt install vim -y
+WORKDIR /etc/ansible
+LABEL org.marlinbluetech.image.authors="ranjit.swain@marlinbluetech.com"
