@@ -1,0 +1,13 @@
+FROM amazonlinux
+RUN yum update -y && \
+    yum install -y yum-utils shadow-utils && \
+    yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo && \
+    yum -y install terraform && \
+    yum -y install python3-pip && \
+    pip3 install awscli && \
+    yum -y install vim
+RUN mkdir /etc/terraform
+WORKDIR /etc/terraform
+LABEL org.marlinbluetech.image.authors="ranjit.swain@marlinbluetech.com"
+ENTRYPOINT [ "sleep" ]
+CMD [ "infinity" ]
