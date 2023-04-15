@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+RUN apt-get update -y && \
+    apt-get install git -y && \
+    apt-get install vim -y
+RUN mkdir /home/gitproj
+WORKDIR /home/gitproj
+LABEL org.marlinbluetech.image.authors="ranjit.swain@marlinbluetech.com"
+ENTRYPOINT [ "sleep" ]
+CMD [ "infinity" ]
