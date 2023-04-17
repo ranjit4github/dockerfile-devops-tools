@@ -1,0 +1,11 @@
+---
+- hosts: demoServer
+  tasks:
+    - name: Install Nginx Server
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+    - name: Start nginx service if not started
+      ansible.builtin.service:
+        name: nginx
+        state: started
